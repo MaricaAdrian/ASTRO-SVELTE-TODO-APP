@@ -1,0 +1,41 @@
+
+###> symfony/framework-bundle ###
+BackApp/.env.local
+BackApp/.env.local.php
+BackApp/.env.*.local
+BackApp/config/secrets/prod/prod.decrypt.private.php
+BackApp/public/bundles/
+BackApp/var/
+BackApp/vendor/
+###< symfony/framework-bundle ###
+
+###> lexik/jwt-authentication-bundle ###
+BackApp/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+BackApp/.idea
+
+# build output
+WebApp/dist/
+
+# generated types
+WebApp/.astro/
+
+# dependencies
+WebApp/node_modules/
+
+# logs
+WebApp/npm-debug.log*
+WebApp/yarn-debug.log*
+WebApp/yarn-error.log*
+WebApp/pnpm-debug.log*
+
+# environment variables
+WebApp/.env
+WebApp/.env.production
+
+# macOS-specific files
+WebApp/.DS_Store
+
+# jetbrains setting folder
+WebApp/.idea/
