@@ -1,0 +1,27 @@
+---
+import List from '../../components/List.svelte';
+import { apiFetch } from "../../utils/api";
+import Layout from '../../layouts/Layout.astro';
+
+const { listId } = Astro.params;
+
+
+export async function getStaticPaths() {
+  let lists;
+  try {
+        await apiFetch(`${import.meta.env.PUBLIC_API_URL}/staticPaths/lists`).then((result) => {
+          lists = result;
+        });
+        return lists.map((id) => {
+          return {params: {listId: id}}
+        })
+    } catch (e) {
+        console.log('Error while trying to fetch my lists', e.message);
+    }
+    
+}
+---
+
+<Layout title="To Do List App">
+  <List client:only="svelte" listId={listId} />
+</Layout>

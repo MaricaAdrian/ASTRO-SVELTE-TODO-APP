@@ -1,0 +1,8 @@
+---
+import Login from '../components/Login.svelte';
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="To Do List App">
+    <Login client:only="svelte" />
+</Layout>
